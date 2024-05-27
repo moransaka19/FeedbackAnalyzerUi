@@ -1,0 +1,5 @@
+<div *ngIf="feedbackTag$ | async; let tag">
+  <p>{{ tag.tag }}</p>
+  <p *ngFor="let sentence of tag.sentences">{{ sentence }}</p>
+  <p>{{ tag.fullText }}</p>
+</div>

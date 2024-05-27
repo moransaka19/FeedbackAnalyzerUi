@@ -1,0 +1,54 @@
+<mat-tab-group>
+  <mat-tab label="All">
+    <div class="flex-items">
+      <div class="feedback-list">
+        <mat-card class="feedback-item" *ngFor="let feedback of allFeedbacks$ | async">
+          <mat-card-content>
+            <p>{{ feedback.sentiment }}</p>
+            <p>{{ feedback.text }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Positive">
+    <div class="flex-items">
+      <div class="feedback-list">
+        <mat-card class="feedback-item" *ngFor="let feedback of positiveFeedbacks$ | async">
+          <mat-card-content>
+            <p>{{ feedback.sentiment }}</p>
+            <p>{{ feedback.text }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="tag-list">
+        <div class="tag-item" *ngFor="let tag of positiveTags$ | async">
+          <button mat-button color="warn" routerLink="/sentence/POSITIVE/{{tag.key}}">{{ tag.key }}- {{ tag.value }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Negative">
+    <div class="flex-items">
+      <div class="feedback-list">
+        <mat-card class="feedback-item" *ngFor="let feedback of negativeFeedbacks$ | async">
+          <mat-card-content>
+            <p>{{ feedback.sentiment }}</p>
+            <p>{{ feedback.text }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="tag-list">
+        <div class="tag-item" *ngFor="let tag of negativeTags$ | async">
+          <button mat-button color="warn" routerLink="/sentence/NEGATIVE/{{tag.key}}">{{ tag.key }}- {{ tag.value }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

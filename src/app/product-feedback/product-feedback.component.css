@@ -1,0 +1,23 @@
+.feedbacks {
+  width: 80%;
+}
+
+.flex-items {
+  display: flex;
+}
+
+.feedback-list {
+  width: 40%;
+}
+
+.feedback-item {
+  margin-top: 2%;
+}
+
+.tag-list {
+  margin-left: 2%;
+}
+
+.tag-item {
+  margin-top: 2%;
+}

@@ -1,0 +1,7 @@
+<p>{{ commonTag }}</p>
+<div *ngFor="let tag of tags$ | async">
+  <div routerLink="/tag/{{tag.id}}">
+    <p>{{ tag.name }}</p>
+    <p *ngFor="let sentence of tag.sentences">{{sentence.text}}</p>
+  </div>
+</div>
