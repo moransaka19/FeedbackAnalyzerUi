@@ -1,7 +1,15 @@
-<p>{{ commonTag }}</p>
+<h1>Common Tag: {{ commonTag }}</h1>
 <div *ngFor="let tag of tags$ | async">
-  <div routerLink="/tag/{{tag.id}}">
-    <p>{{ tag.name }}</p>
-    <p *ngFor="let sentence of tag.sentences">{{sentence.text}}</p>
-  </div>
+  <mat-card matRipple>
+    <mat-card-header>
+      <h2>Feedback tag: <b>{{ tag.name }}</b></h2>
+    </mat-card-header>
+    <mat-card-content>
+      <h2>Sentences:</h2>
+      <p *ngFor="let sentence of tag.sentences"><b>{{ sentence.text }}</b></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" routerLink="/tag/{{tag.id}}">View full feedback</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

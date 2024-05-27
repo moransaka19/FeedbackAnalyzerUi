@@ -5,6 +5,8 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {AsyncPipe, NgForOf} from "@angular/common";
 import {MatButton} from "@angular/material/button";
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader} from "@angular/material/card";
+import {MatRipple} from "@angular/material/core";
 
 @Component({
   selector: 'app-tag-sentence',
@@ -13,7 +15,12 @@ import {MatButton} from "@angular/material/button";
     AsyncPipe,
     NgForOf,
     MatButton,
-    RouterLink
+    RouterLink,
+    MatCard,
+    MatCardHeader,
+    MatCardContent,
+    MatRipple,
+    MatCardActions
   ],
   templateUrl: './tag-sentence.component.html',
   styleUrl: './tag-sentence.component.css'
