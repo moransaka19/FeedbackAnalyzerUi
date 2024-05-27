@@ -1,5 +1,17 @@
 <div *ngIf="feedbackTag$ | async; let tag">
-  <p>{{ tag.tag }}</p>
-  <p *ngFor="let sentence of tag.sentences">{{ sentence }}</p>
-  <p>{{ tag.fullText }}</p>
+  <mat-card matRipple>
+    <mat-card-header>
+      <h2>Feedback tag: <b>{{ tag.tag }}</b></h2>
+    </mat-card-header>
+    <mat-card-content>
+      <h2>Sentences:</h2>
+      <p *ngFor="let sentence of tag.sentences"><b>{{ sentence }}</b></p>
+      <h2>Full text:</h2>
+      <p>{{ tag.fullText }}</p>
+      <div *ngIf="tag.originalText">
+        <h2>Original text:</h2>
+        <p>{{ tag.originalText }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

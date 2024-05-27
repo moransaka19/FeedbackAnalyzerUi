@@ -50,6 +50,8 @@ export class ProductsComponent {
   openDialog(id: number) {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       data: {id: id},
+      height: '500px',
+      width: '500px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

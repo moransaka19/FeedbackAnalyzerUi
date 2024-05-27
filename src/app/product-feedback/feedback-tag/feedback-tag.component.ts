@@ -1,9 +1,12 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment";
 import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import {MatButton} from "@angular/material/button";
+import {MatCard, MatCardActions, MatCardContent, MatCardHeader} from "@angular/material/card";
+import {MatRipple} from "@angular/material/core";
 
 @Component({
   selector: 'app-feedback-tag',
@@ -11,7 +14,14 @@ import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
   imports: [
     AsyncPipe,
     NgForOf,
-    NgIf
+    NgIf,
+    MatButton,
+    MatCard,
+    MatCardActions,
+    MatCardContent,
+    MatCardHeader,
+    MatRipple,
+    RouterLink
   ],
   templateUrl: './feedback-tag.component.html',
   styleUrl: './feedback-tag.component.css'
